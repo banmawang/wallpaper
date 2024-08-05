@@ -2,7 +2,11 @@
 
 <template>
   <main class="">
-    <img src="/bm.jpg" class="aspect-video no-drag" draggable="false" />
+    <img
+      src="http://localhost:3000/wallpaper/fiona-PEJHMgx_ilo-unsplash.jpg"
+      class="aspect-video no-drag"
+      draggable="false"
+    />
     <div
       class="cursor-pointer bg-gray-200 text-center py-3 m-3 rounded-lg hover:bg-gray-300 duration-500 opacity-80 shadow-sm no-drag"
     >
