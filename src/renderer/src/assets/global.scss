@@ -1,11 +1,12 @@
-html {
+.drag,
+body {
   -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
 }
 
 body {
   @apply w-screen h-screen bg-gray-400;
-}
-
-textarea {
-  -webkit-app-region: no-drag;
 }

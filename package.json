@@ -25,7 +25,8 @@
     "@electron-toolkit/utils": "^3.0.0",
     "@icon-park/vue-next": "^1.4.2",
     "electron-updater": "^6.1.7",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",

@@ -3,11 +3,23 @@ import { Pic, SettingOne } from '@icon-park/vue-next'
 </script>
 
 <template>
-  <main class="px-3 py-2 text-sm opacity-80 flex justify-between items-center">
-    <section class="">斑马兽桌面壁纸</section>
+  <main class="px-3 py-2 text-sm opacity-80 flex justify-between items-center drag">
+    <section class="text-xs opacity-80">斑马兽桌面壁纸</section>
     <section class="flex items-center justify-center gap-2">
-      <pic theme="outline" size="20" fill="#333" />
-      <setting-one theme="outline" size="20" fill="#333" />
+      <pic
+        theme="outline"
+        size="20"
+        fill="#333"
+        class="cursor-pointer no-drag"
+        @click="$router.push({ name: 'home' })"
+      />
+      <setting-one
+        theme="outline"
+        size="20"
+        fill="#333"
+        class="cursor-pointer no-drag"
+        @click="$router.push({ name: 'setting' })"
+      />
     </section>
   </main>
 </template>
