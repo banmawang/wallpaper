@@ -1,0 +1,15 @@
+<script setup lang="ts">
+import { Pic, SettingOne } from '@icon-park/vue-next'
+</script>
+
+<template>
+  <main class="px-3 py-2 text-sm opacity-80 flex justify-between items-center">
+    <section class="">斑马兽桌面壁纸</section>
+    <section class="flex items-center justify-center gap-2">
+      <pic theme="outline" size="20" fill="#333" />
+      <setting-one theme="outline" size="20" fill="#333" />
+    </section>
+  </main>
+</template>
+
+<style lang="scss"></style>
