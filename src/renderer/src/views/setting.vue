@@ -6,10 +6,10 @@ const { setImageSaveDirectory } = useWallpaper()
 </script>
 
 <template>
-  <main class="p-3 bg-[#34495e] text-white flex flex-col justify-between">
-    <section class="mt-6">
-      <h2 class="flex justify-center py-5 opacity-70 text-sm">参数设置</h2>
-      <div class="flex gap-1 items-center">
+  <main class="p-10 bg-[#34495e] text-white flex flex-col justify-between">
+    <section class="font-mono">
+      <h2 class="flex justify-center py-5 opacity-70">软件配置</h2>
+      <div class="flex gap-2 items-center">
         <el-input
           v-model="config.saveDirectory"
           readonly
@@ -17,12 +17,16 @@ const { setImageSaveDirectory } = useWallpaper()
           size="normal"
           clearable
         />
-        <el-button type="primary" size="default" @click="setImageSaveDirectory"
-          >选择图片保存目录</el-button
-        >
+        <el-button type="primary" size="default" @click="setImageSaveDirectory">选择目录</el-button>
       </div>
     </section>
-    <div class="text-xs opacity-30 font-mono font-light flex justify-center mb-5">斑马兽作品</div>
+    <div class="text-xs font-mono font-light text-center">
+      <div class="text-orange-300">
+        斑马兽作品
+        <span class="font-bold text-yellow-500">作者：何俊</span>
+      </div>
+      <div class="mt-2 opacity-50">version:1.0.1</div>
+    </div>
   </main>
 </template>
 

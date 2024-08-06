@@ -22,7 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="">
+  <main class="select-none font-mono">
     <img
       ref="img"
       :src="configStore.config.url"
@@ -31,16 +31,16 @@ onMounted(() => {
       @click="load"
     />
     <div
-      class="cursor-pointer bg-gray-300 opacity-70 hover:opacity-100 text-center py-3 m-3 rounded-lg hover:shadow-sm duration-500 no-drag"
+      class="cursor-pointer bg-white opacity-100 hover:opacity-80 text-center py-3 m-3 rounded-lg hover:shadow-sm duration-500 no-drag"
       @click="setWallpaper"
     >
       设为壁纸
     </div>
-    <div class="mx-3 text-xs text-gray-700 flex justify-between items-center">
-      <div class="">作者：何俊</div>
-      <div class="hover:font-bold cursor-pointer text-sm no-drag" @click="downloadImage">
+    <div class="mx-3 text-xs text-orange-500 flex justify-center items-center">
+      <div class="">一张漂亮的壁纸，营造美好的心情</div>
+      <!-- <div class="hover:font-bold cursor-pointer text-sm no-drag" @click="downloadImage">
         下载壁纸
-      </div>
+      </div> -->
     </div>
   </main>
 </template>

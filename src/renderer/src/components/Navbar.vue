@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Pic, SettingOne } from '@icon-park/vue-next'
+import { Pic, SettingTwo } from '@icon-park/vue-next'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import { Pic, SettingOne } from '@icon-park/vue-next'
         :class="{ iconColor: $route.name == 'home' }"
         @click="$router.push({ name: 'home' })"
       />
-      <setting-one
+      <setting-two
         theme="outline"
         size="20"
         class="cursor-pointer no-drag text-gray-500"

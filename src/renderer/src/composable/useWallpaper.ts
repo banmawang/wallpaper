@@ -8,7 +8,7 @@ export default () => {
   const setWallpaper = async () => {
     const state = await window.api.checkDirectory(config.saveDirectory)
     if (!state) {
-      ElMessage({ type: 'error', message: '图片保存目录无效' })
+      ElMessage({ type: 'error', message: '壁纸储存目录无效' })
       return router.push({ name: 'setting' })
     }
     window.api.setWallpaper(config.url, config.saveDirectory)
