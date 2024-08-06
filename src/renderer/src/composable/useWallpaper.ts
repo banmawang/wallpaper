@@ -5,5 +5,9 @@ export default () => {
   const setWallpaper = () => {
     window.api.setWallpaper(config.url)
   }
-  return { setWallpaper }
+
+  const downloadImage = () => {
+    window.api.downloadImage(config.url)
+  }
+  return { setWallpaper, downloadImage }
 }

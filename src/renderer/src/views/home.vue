@@ -4,7 +4,7 @@ import { http } from '@renderer/plugins/axios'
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import { ElLoading } from 'element-plus'
 import { onMounted, ref } from 'vue'
-const { setWallpaper } = useWallpaper()
+const { setWallpaper, downloadImage } = useWallpaper()
 const configStore = useConfigStore()
 const img = ref<HTMLImageElement>()
 const load = async () => {
@@ -38,7 +38,9 @@ onMounted(() => {
     </div>
     <div class="mx-3 text-xs text-gray-700 flex justify-between items-center">
       <div class="">作者：何俊</div>
-      <div class="hover:font-bold cursor-pointer text-sm no-drag">下载壁纸</div>
+      <div class="hover:font-bold cursor-pointer text-sm no-drag" @click="downloadImage">
+        下载壁纸
+      </div>
     </div>
   </main>
 </template>
