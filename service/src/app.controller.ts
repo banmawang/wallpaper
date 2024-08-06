@@ -10,21 +10,20 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  async getHello(@Res() res: Response) {
+  async getHello() {
     const files = await readdir(resolve(__dirname, '..', 'wallpaper'));
 
-    const file = await readFile(
-      resolve(__dirname, '../wallpaper', files[_.random(files.length - 1)]),
+    return (
+      'http://localhost:3000/wallpaper/' + files[_.random(files.length - 1)]
     );
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        res.type('image/jpeg');
-        resolve(res.send(file));
-      }, 2000);
-    });
-
-    // return (
-    //   'http://localhost:3000/wallpaper/' + files[_.random(files.length - 1)]
+    // const file = await readFile(
+    //   resolve(__dirname, '../wallpaper', files[_.random(files.length - 1)]),
     // );
+    // return new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     res.type('image/jpeg');
+    //     resolve(res.send(file));
+    //   }, 2000);
+    // });
   }
 }

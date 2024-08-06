@@ -1,28 +1,38 @@
 <script setup lang="ts">
+import useWallpaper from '@renderer/composable/useWallpaper'
+import { http } from '@renderer/plugins/axios'
+import { useConfigStore } from '@renderer/store/useConfigStore'
 import { ElLoading } from 'element-plus'
-import { ref } from 'vue'
-
+import { onMounted, ref } from 'vue'
+const { setWallpaper } = useWallpaper()
+const configStore = useConfigStore()
 const img = ref<HTMLImageElement>()
-const load = () => {
+const load = async () => {
+  const res = await http.get('/')
   const loading = ElLoading.service({ background: 'rgba(255,255,255,.2)' })
-  img.value!.src = `http://localhost:3000?k${Math.random()}`
+  configStore.config.url = res.data
+  img.value!.src = res.data
   img.value!.addEventListener('load', () => {
     loading.close()
   })
 }
+onMounted(() => {
+  if (!configStore.config.url) load()
+})
 </script>
 
 <template>
   <main class="">
     <img
       ref="img"
-      src="http://localhost:3000/wallpaper/fiona-PEJHMgx_ilo-unsplash.jpg"
+      :src="configStore.config.url"
       class="aspect-video no-drag cursor-pointer"
       draggable="false"
       @click="load"
     />
     <div
       class="cursor-pointer bg-gray-200 text-center py-3 m-3 rounded-lg hover:bg-gray-300 duration-500 opacity-80 shadow-sm no-drag"
+      @click="setWallpaper"
     >
       设为壁纸
     </div>
