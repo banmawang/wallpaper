@@ -9,19 +9,23 @@ import { Pic, SettingOne } from '@icon-park/vue-next'
       <pic
         theme="outline"
         size="20"
-        fill="#333"
-        class="cursor-pointer no-drag"
+        class="cursor-pointer no-drag text-gray-500"
+        :class="{ iconColor: $route.name == 'home' }"
         @click="$router.push({ name: 'home' })"
       />
       <setting-one
         theme="outline"
         size="20"
-        fill="#333"
-        class="cursor-pointer no-drag"
+        class="cursor-pointer no-drag text-gray-500"
+        :class="{ iconColor: $route.name == 'setting' }"
         @click="$router.push({ name: 'setting' })"
       />
     </section>
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.iconColor {
+  color: #d35400 !important;
+}
+</style>
