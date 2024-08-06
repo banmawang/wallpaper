@@ -4,7 +4,7 @@ import { http } from '@renderer/plugins/axios'
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import { ElLoading } from 'element-plus'
 import { onMounted, ref } from 'vue'
-const { setWallpaper, downloadImage } = useWallpaper()
+const { setWallpaper } = useWallpaper()
 const configStore = useConfigStore()
 const img = ref<HTMLImageElement>()
 const load = async () => {

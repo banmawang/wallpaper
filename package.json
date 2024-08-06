@@ -1,10 +1,10 @@
 {
-  "name": "wallpaper",
-  "version": "1.0.0",
-  "description": "An Electron application with Vue and TypeScript",
+  "name": "banmashou-wallpaper",
+  "version": "1.0.1",
+  "description": "斑马兽桌面壁纸软件",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "https://www.banmashou.com",
+  "homepage": "https://www.banmashou.com",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
@@ -41,6 +41,7 @@
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@rushstack/eslint-patch": "^1.10.3",
     "@types/node": "^20.14.8",
+    "@types/node-fetch": "^2.6.11",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",

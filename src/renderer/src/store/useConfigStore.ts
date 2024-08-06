@@ -6,7 +6,7 @@ export const useConfigStore = defineStore(
   () => {
     const config = ref({
       url: '',
-      saveDirectory: 'abc'
+      saveDirectory: ''
     })
     return { config }
   },

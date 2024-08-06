@@ -3,6 +3,7 @@ import useWallpaper from '@renderer/composable/useWallpaper'
 import { useConfigStore } from '@renderer/store/useConfigStore'
 const { config } = useConfigStore()
 const { setImageSaveDirectory } = useWallpaper()
+const version = process.env.VITE_SNIPPETS_VERSION
 </script>
 
 <template>
@@ -25,7 +26,7 @@ const { setImageSaveDirectory } = useWallpaper()
         斑马兽作品
         <span class="font-bold text-yellow-500">作者：何俊</span>
       </div>
-      <div class="mt-2 opacity-50">version:1.0.1</div>
+      <div class="mt-2 opacity-50">version: {{ version }}</div>
     </div>
   </main>
 </template>

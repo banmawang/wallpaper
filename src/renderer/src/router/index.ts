@@ -4,7 +4,7 @@ import Home from '@renderer/views/home.vue'
 import Setting from '@renderer/views/setting.vue'
 
 const routes = [
-  { name: 'home', path: '/', component: Home },
+  { name: 'home', path: '/:any(.*)*', component: Home },
   { name: 'setting', path: '/setting', component: Setting }
 ]
 

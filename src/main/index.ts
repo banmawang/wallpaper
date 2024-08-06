@@ -3,6 +3,7 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { join } from 'path'
 import icon from '../../resources/icon.png?asset'
 import './ipcMain'
+import { createTray } from './tray'
 
 function createWindow(): void {
   // Create the browser window.
@@ -13,6 +14,7 @@ function createWindow(): void {
     resizable: false,
     show: false,
     frame: false,
+    skipTaskbar: true,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -20,7 +22,7 @@ function createWindow(): void {
       sandbox: false
     }
   })
-  mainWindow.webContents.openDevTools()
+  if (is.dev) mainWindow.webContents.openDevTools()
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
@@ -43,6 +45,10 @@ function createWindow(): void {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  //托盘图标
+  createTray(createWindow)
+  //隐藏苹果dock图标
+  if (process.platform == 'darwin') app.dock.hide()
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
 
