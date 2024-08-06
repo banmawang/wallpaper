@@ -3,10 +3,8 @@ import { createWriteStream } from 'node:fs'
 import { pipeline } from 'node:stream'
 import { promisify } from 'node:util'
 import fetch from 'node-fetch'
-import { resolve } from 'node:path'
 
-export const downloadFile = async (url: string, path: string) => {
-  const localFile = resolve(path, url.split('/').pop()!)
+export const downloadFile = async (url: string, localFile: string) => {
   const streamPipeline = promisify(pipeline)
   const response = await fetch(url)
   if (!response.ok) {

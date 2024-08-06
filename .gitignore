@@ -4,6 +4,3 @@ out
 .DS_Store
 *.log*
 /service/wallpaper
-
-wallpaper/*
-!wallpaper/.gitkeep
