@@ -11,6 +11,9 @@ const api = {
   },
   setImageSaveDirectory: () => {
     return ipcRenderer.invoke('setImageDirectory')
+  },
+  checkDirectory: (path: string) => {
+    return ipcRenderer.invoke('checkDirectory', path)
   }
 }
 
