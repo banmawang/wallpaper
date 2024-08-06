@@ -1,9 +1,8 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { resolve } from 'path';
 import _ from 'lodash';
-import { Response } from 'express';
-import { readdir, readFile } from 'fs/promises';
+import { readdir } from 'fs/promises';
 
 @Controller()
 export class AppController {
