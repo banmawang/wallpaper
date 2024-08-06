@@ -2,12 +2,19 @@ import { useConfigStore } from '@renderer/store/useConfigStore'
 
 export default () => {
   const { config } = useConfigStore()
+  //设置壁纸
   const setWallpaper = () => {
-    window.api.setWallpaper(config.url)
+    window.api.setWallpaper(config.url, config.saveDirectory)
   }
 
   const downloadImage = () => {
     window.api.downloadImage(config.url)
   }
-  return { setWallpaper, downloadImage }
+
+  //设置图片壁纸保存目录
+  const setImageSaveDirectory = async () => {
+    const path = await window.api.setImageSaveDirectory()
+    if (path) config.saveDirectory = path
+  }
+  return { setWallpaper, downloadImage, setImageSaveDirectory }
 }

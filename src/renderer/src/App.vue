@@ -4,9 +4,11 @@ import Navbar from './components/Navbar.vue'
 
 <template>
   <Suspense>
-    <main>
+    <main class="flex flex-col h-screen">
       <Navbar />
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <component :is="Component" class="flex-1"></component>
+      </RouterView>
     </main>
   </Suspense>
 </template>
