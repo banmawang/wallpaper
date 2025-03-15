@@ -15,6 +15,7 @@ function createWindow(): void {
     show: false,
     frame: false,
     skipTaskbar: true,
+    // maximizable: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -25,6 +26,10 @@ function createWindow(): void {
   if (is.dev) mainWindow.webContents.openDevTools()
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+  })
+
+  mainWindow.on('blur', () => {
+    mainWindow.minimize()
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

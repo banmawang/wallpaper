@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "斑马兽桌面壁纸软件",
   "main": "./out/main/index.js",
-  "author": "https://www.banmashou.com",
+  "author": "斑马兽",
   "homepage": "https://www.banmashou.com",
   "scripts": {
     "format": "prettier --write .",

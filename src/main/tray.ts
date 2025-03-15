@@ -1,4 +1,4 @@
-import { BrowserWindow, Menu, shell, Tray } from 'electron'
+import { Menu, shell, Tray } from 'electron'
 import path from 'path'
 const createTray = (createWindow: () => void) => {
   const tray = new Tray(
@@ -19,7 +19,8 @@ const createTray = (createWindow: () => void) => {
     {
       label: '设置壁纸',
       click: () => {
-        if (BrowserWindow.getAllWindows().length == 0) createWindow()
+        // if (BrowserWindow.getAllWindows().length == 0) createWindow()
+        createWindow()
       }
     },
     { type: 'separator' },

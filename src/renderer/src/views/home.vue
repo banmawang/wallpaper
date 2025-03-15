@@ -10,8 +10,8 @@ const img = ref<HTMLImageElement>()
 const load = async () => {
   const res = await http.get('/')
   const loading = ElLoading.service({ background: 'rgba(255,255,255,.2)' })
-  configStore.config.url = res.data
-  img.value!.src = res.data
+  configStore.config.url = res.data.text
+  img.value!.src = res.data.text
   img.value!.addEventListener('load', () => {
     loading.close()
   })

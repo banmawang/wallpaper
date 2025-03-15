@@ -2,8 +2,8 @@ import axios from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
 
 const http = axios.create({
-  // baseURL: import.meta.env.DEV ? 'http://localhost:3000' : 'https://www.bmcms.com/api',
-  baseURL: 'http://localhost:3000',
+  // baseURL: import.meta.env.DEV ? 'http://localhost:3000' : 'http://api.banmashou.com',
+  baseURL: 'https://api.528sq.cn/api/360bz.php?n=1&type=image',
   timeout: 10000
 })
 
